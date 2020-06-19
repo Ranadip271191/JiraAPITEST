@@ -22,7 +22,7 @@ public class StepDefination01 extends library {
     RequestSpecification req;
     public Response response;
     public static String key;
-    TestDataBuild t = new TestDataBuild();
+    TestDataBuild t =new TestDataBuild();
 
     public static RequestSpecification session_start(String APIName) throws IOException {
         library.requestspecification();

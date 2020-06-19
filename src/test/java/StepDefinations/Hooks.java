@@ -19,8 +19,7 @@ public class Hooks extends library {
             3. If not create a new key and use it and update the key to global.properties file
          */
         logger.info("executing hooks.");
-        String pkey = library.GlobalValue("defaultProjectKey");
-        StepDefination01.key = pkey;
+        StepDefination01.key = library.GlobalValue("defaultProjectKey");
         stepdefination01.user_get_the_key("createIssue");
         stepdefination01.user_calls_http_request("projectAPI","getProject","GET");
         int status_code =stepdefination01.response.getStatusCode();
