@@ -23,7 +23,7 @@ public class Hooks extends library {
         stepdefination01.user_get_the_key("createIssue");
         stepdefination01.user_calls_http_request("projectAPI","getProject","GET");
         int status_code =stepdefination01.response.getStatusCode();
-
+        logger.info("Status code is "+status_code);
         if(status_code!=200){
             StepDefination01.key=null;
             stepdefination01.user_get_the_key("createIssue");
