@@ -6,8 +6,6 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
-
 public class Hooks extends library {
     private static Logger logger = LogManager.getLogger(Hooks.class);
 
@@ -20,6 +18,7 @@ public class Hooks extends library {
             2. If exists use the key
             3. If not create a new key and use it and update the key to global.properties file
          */
+        logger.info("executing hooks.");
         String pkey = library.GlobalValue("defaultProjectKey");
         StepDefination01.key = pkey;
         stepdefination01.user_get_the_key("createIssue");
