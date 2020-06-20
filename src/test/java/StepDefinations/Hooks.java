@@ -26,7 +26,8 @@ public class Hooks extends library {
         logger.info("Status code is "+status_code);
         if(status_code==404){
             logger.info("Global  project key already exists");
-            StepDefination01.key = library.GlobalValue("projectKey");
+            StepDefination01.key=null;
+            stepdefination01.user_get_the_key("createIssue");
         }else if(status_code == 200){
             logger.info("Default project key exists. Using default project key..");
         }else {
