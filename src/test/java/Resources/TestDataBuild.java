@@ -53,7 +53,8 @@ public class TestDataBuild {
            3. Create a HashMap Object "fields" to add subsequent nested JSON
          */
         data = library.DataDriven("Issue", "Craete_Issue");
-        String projectKey = StepDefination01.key;
+       // String projectKey = StepDefination01.key;
+        String projectKey = library.GlobalValue("defaultProjectName");
 
         //Project key
         HashMap<String, Object> key = new HashMap<>();
