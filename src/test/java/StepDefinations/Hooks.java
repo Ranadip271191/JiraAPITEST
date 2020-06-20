@@ -25,6 +25,7 @@ public class Hooks extends library {
         int status_code =stepdefination01.response.getStatusCode();
         logger.info("Status code is "+status_code);
         if(status_code!=200){
+            library.writevalue();
             StepDefination01.key=null;
             stepdefination01.user_get_the_key("createIssue");
             String key = StepDefination01.key;
