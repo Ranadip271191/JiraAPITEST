@@ -27,11 +27,6 @@ public class Hooks extends library {
         if(status_code==404){
             logger.info("Global  project key already exists");
             StepDefination01.key = library.GlobalValue("projectKey");
-            PropertiesConfiguration p;
-            p = new PropertiesConfiguration("src/test/java/Resources/global.properties");
-            p.setProperty("defaultProjectKey",StepDefination01.key);
-            p.save();
-
         }else if(status_code == 200){
             logger.info("Default project key exists. Using default project key..");
         }else {
