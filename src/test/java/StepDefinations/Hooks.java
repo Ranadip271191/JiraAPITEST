@@ -24,7 +24,17 @@ public class Hooks extends library {
         stepdefination01.user_calls_http_request("projectAPI","getProject","GET");
         int status_code =stepdefination01.response.getStatusCode();
         logger.info("Status code is "+status_code);
-        if(status_code!=200){
+        if(status_code==400){
+            logger.info("Global  project key already exists");
+            StepDefination01.key = library.GlobalValue("projectKey");
+            PropertiesConfiguration p;
+            p = new PropertiesConfiguration("src/test/java/Resources/global.properties");
+            p.setProperty("defaultProjectKey",StepDefination01.key);
+            p.save();
+
+        }else if(status_code == 200){
+            logger.info("Default project key exists. Using default project key..");
+        }else {
             library.writevalue();
             StepDefination01.key=null;
             stepdefination01.user_get_the_key("createIssue");
@@ -34,9 +44,6 @@ public class Hooks extends library {
             p.setProperty("defaultProjectKey",key);
             p.save();
             logger.info("Default project key does not exists. Create a new Key and make it default");
-            }
-        else{
-            logger.info("Default project key exists. Using default project key");
         }
     }
     @After("@DeleteProject")
