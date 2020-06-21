@@ -54,7 +54,7 @@ public class TestDataBuild {
          */
         data = library.DataDriven("Issue", "Craete_Issue");
        // String projectKey = StepDefination01.key;
-        String projectKey = library.GlobalValue("defaultProjectName");
+        String projectKey = library.GlobalValue("defaultProjectKey");
 
         //Project key
         HashMap<String, Object> key = new HashMap<>();
